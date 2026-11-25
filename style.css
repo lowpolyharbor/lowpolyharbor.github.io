@@ -1,0 +1,98 @@
+/* VOICE: warm, small-studio, toy-box; a harbour at golden hour
+   IDEA: the studio site behaves like the logo badge come to life: sunset sky above, faceted sea below
+   PICTURE: the badge riding on low-poly waves; the game shown in real screenshots
+   COLOUR and TYPE: sunset peach + harbour blue lead, cream text on sea, lighthouse brick as the accent; Silkscreen (pixel, like the logo) + Inter
+   LAYOUT: one centred hero, a sea-blue about band, a project strip; projects page = one big feature + gallery */
+:root{
+  color-scheme:light;
+  --sky:#9fd0e6;--peach:#f7c99c;--sand:#fbe6c6;--sea:#2b61b3;--deep:#173866;--night:#10284c;
+  --cream:#fff4cc;--ink:#15233a;--brick:#b4512c;--brick-d:#8e3c1f;--grass:#6aa84f;
+  --r:18px;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.px{font-family:Silkscreen,"Press Start 2P",ui-monospace,monospace;font-weight:700;letter-spacing:.02em;line-height:1.05}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,18px)}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:rgba(251,230,198,.9);backdrop-filter:blur(8px);border-bottom:2px solid #0000000f}
+.top .wrap{display:flex;align-items:center;gap:14px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px}
+.brand span{font-size:17px;color:var(--deep)}
+.nav{margin-left:auto;display:flex;gap:4px}
+.nav a{text-decoration:none;font-weight:700;padding:10px 14px;border-radius:12px;min-height:44px;display:flex;align-items:center}
+.nav a:hover{background:#0000000a}
+.nav a[aria-current=page]{background:var(--deep);color:var(--cream)}
+
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:14px;font-weight:800;text-decoration:none;font-size:16px;
+  box-shadow:0 4px 0 #00000026;transition:transform .12s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.nav a:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.btn.primary{background:var(--brick);color:#fff;box-shadow:0 4px 0 var(--brick-d)}
+.btn.ghost{background:var(--cream);color:var(--deep)}
+
+/* hero: sunset sky, badge, faceted sea */
+.hero{position:relative;background:linear-gradient(180deg,var(--sky) 0%,#c9dfe4 38%,var(--peach) 78%);padding:clamp(28px,5vw,56px) 0 0;text-align:center;overflow:hidden}
+.hero .badge{width:min(400px,72vw);margin:0 auto;filter:drop-shadow(0 18px 24px #17386655);animation:bob 6s ease-in-out infinite}
+.hero h1{font-size:clamp(30px,4.6vw,48px);margin:22px auto 10px;color:var(--deep);max-width:16ch;text-wrap:balance}
+.hero p.lead{font-size:clamp(17px,1.6vw,19px);max-width:56ch;margin:0 auto 22px;color:#2a3a55}
+.hero .btns{justify-content:center;margin-bottom:clamp(40px,6vw,70px)}
+.sea{display:block;width:100%;height:clamp(70px,10vw,130px)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@media (prefers-reduced-motion:reduce){.hero .badge{animation:none}.btn{transition:none}}
+
+/* bands */
+.band{padding:clamp(40px,6vw,80px) 0}
+.band.sea-band{background:var(--sea);color:var(--cream)}
+.band.deep{background:var(--deep);color:var(--cream)}
+h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 16px;text-wrap:balance}
+.sea-band h2,.deep h2{color:var(--cream)}
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:start}
+.about p{margin:0 0 14px;max-width:62ch}
+.pillars{display:grid;gap:12px}
+.pillar{background:#ffffff14;border:2px solid #ffffff22;border-radius:var(--r);padding:16px 18px}
+.pillar b{display:block;font-size:17px;margin-bottom:3px;color:#fff}
+.pillar span{font-size:15.5px;opacity:.9}
+
+/* project teaser + feature */
+.proj{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(22px,4vw,48px);align-items:center}
+.shot{border-radius:var(--r);overflow:hidden;box-shadow:0 14px 30px #17386640;border:4px solid #fff}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.tag{font-size:13px;font-weight:800;padding:4px 10px;border-radius:999px;background:var(--cream);color:var(--deep);border:2px solid #17386622}
+.tag.hot{background:var(--brick);color:#fff;border-color:var(--brick)}
+.proj h3{font-size:clamp(26px,3vw,34px);margin:0 0 10px;color:var(--deep)}
+.proj p{margin:0 0 16px}
+.feat{margin:0 0 20px;padding:0;list-style:none;display:grid;gap:8px}
+.feat li{padding-left:26px;position:relative}
+.feat li::before{content:"";position:absolute;left:4px;top:.55em;width:11px;height:11px;background:var(--brick);transform:rotate(45deg);border-radius:2px}
+
+/* page title band */
+.pagehead{background:linear-gradient(180deg,var(--sky),var(--peach));padding:clamp(34px,5vw,60px) 0 0;overflow:hidden}
+.pagehead h1{font-size:clamp(32px,5vw,52px);margin:0 0 6px;color:var(--deep)}
+.pagehead p{margin:0 0 26px;max-width:60ch;color:#2a3a55}
+
+/* gallery */
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;scrollbar-width:thin}
+.gallery figure{flex:0 0 min(560px,82vw);margin:0;scroll-snap-align:start}
+.gallery figcaption{font-size:14px;margin-top:8px;color:#3a4a63}
+.gnav{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px}
+.gnav button{width:44px;height:44px;border-radius:12px;border:0;background:var(--deep);color:var(--cream);font:800 18px Inter,sans-serif;cursor:pointer}
+.gnav button:focus-visible{outline:3px solid var(--brick);outline-offset:2px}
+
+/* footer */
+footer{background:var(--night);color:#c9d6ea;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+footer .brand span{color:var(--cream)}
+footer img{width:34px;height:34px}
+
+@media (max-width:820px){
+  .about,.proj{grid-template-columns:minmax(0,1fr)}
+  .brand span{font-size:15px}
+}
+@media (max-width:420px){ .brand span{display:none} }
