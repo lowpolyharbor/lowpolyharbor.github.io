@@ -65,6 +65,7 @@ h2{font-size:clamp(26px,3.4vw,38px);margin:0 0 16px;text-wrap:balance}
 .shot{border-radius:var(--r);overflow:hidden;box-shadow:0 14px 30px #17386640;border:4px solid #fff}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .tag{font-size:13px;font-weight:800;padding:4px 10px;border-radius:999px;background:var(--cream);color:var(--deep);border:2px solid #17386622}
+a.tag{text-decoration:none}
 .tag.hot{background:var(--brick);color:#fff;border-color:var(--brick)}
 .proj h3{font-size:clamp(26px,3vw,34px);margin:0 0 10px;color:var(--deep)}
 .proj p{margin:0 0 16px}
